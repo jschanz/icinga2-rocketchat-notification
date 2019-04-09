@@ -1,8 +1,9 @@
 # icinga2-rocketchat-notification
 push icinga2 notifications to rocket.chat
 
-!!! work in progress, but looks fancy enough at the moment !!!
 ![Rocket.Chat notification](https://github.com/jschanz/icinga2-rocketchat-notification/blob/master/images/rocketchat.png "rocket.chat notification")
+
+!!! work in progress, but looks fancy enough at the moment !!!
 
 ## Installation
 copy both notification scripts to /etc/icinga2/scripts or any other folder which is accessible by icinga2 user

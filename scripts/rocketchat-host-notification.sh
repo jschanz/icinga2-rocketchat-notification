@@ -24,8 +24,10 @@ else
     ICON=":white_medium_square:"
 fi
 
+HOSTLINK="https://${ICINGA_HOSTNAME}/icingaweb2/monitoring/host/show?host=${HOSTNAME}"
+
 #Send message to Rocket.Chat
-PAYLOAD="payload={\"text\": \"${ICON} ${NOTIFICATIONTYPE}: ${HOSTNAME} -> *${HOSTDISPLAYNAME}: [ ${HOSTSTATE} ]* | ${HOSTOUTPUT} | <https://${ICINGA_HOSTNAME}/icingaweb2/monitoring/host/services?host=${HOSTNAME}> | [ *${NOTIFICATIONAUTHORNAME}* ]: ${NOTIFICATIONCOMMENT} \"}"
+PAYLOAD="payload={\"text\": \"${ICON} ${NOTIFICATIONTYPE}: [${HOSTNAME}](${HOSTLINK}) -> *[${HOSTDISPLAYNAME}](${HOSTLINK}): [ ${HOSTSTATE} ]* | ${HOSTOUTPUT} | [ *${NOTIFICATIONAUTHORNAME}* ]: ${NOTIFICATIONCOMMENT} \"}"
 
 echo "$PAYLOAD" >> /var/log/icinga2/rocketchat-host-notification.log
 
